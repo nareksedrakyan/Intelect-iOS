@@ -55,8 +55,8 @@
         typeof(self) strongSelf = weakSelf;
         [strongSelf.signUpDelegate signUpViewController:self didreceiveUser:response];
         [self.navigationController popViewControllerAnimated:YES];
-    } fail:^(NSError *error, NSUInteger statusCode) {
-        NSLog(@"%@",error.localizedDescription);
+    } fail:^(NSError *error, NSString *responseErrorMessage, NSUInteger statusCode) {
+        NSLog(@"%@",responseErrorMessage);
     }];
 }
 

@@ -49,8 +49,8 @@
     [urc signInWithUser:user success:^(id response) {
         [[Settings sharedInstance] setLoggedInUser:response];
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-    } fail:^(NSError *error, NSUInteger statusCode) {
-        NSLog(@"%@",error.localizedDescription);
+    } fail:^(NSError *error, NSString *responseErrorMessage, NSUInteger statusCode) {
+        NSLog(@"%@",responseErrorMessage);
     }];
 }
 

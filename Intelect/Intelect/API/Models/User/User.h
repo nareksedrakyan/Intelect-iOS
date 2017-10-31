@@ -20,7 +20,7 @@
 @property (nonatomic) NSString *photoUrl;
 @property (nonatomic) NSString *lastActive;
 @property (nonatomic) NSString *accessToken;
-@property (nonatomic) NSInteger *totalRating;
+@property (nonatomic) NSInteger totalRating;
 @property (nonatomic) Location *location;
 @property (nonatomic) NSArray<NSString *> *questionIds;
 @property (nonatomic) NSArray<Rating> *ratings;

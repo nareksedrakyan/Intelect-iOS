@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, RequestControllerStatus) {
     RequestControllerStatusInProgress,
 };
 typedef void(^SuccessBlock)(id response);
-typedef void(^FailBlock)(NSError *error, NSUInteger statusCode);
+typedef void(^FailBlock)(NSError *error,NSString *responseErrorMessage, NSUInteger statusCode);
 
 @interface BaseRequestController : NSObject
 

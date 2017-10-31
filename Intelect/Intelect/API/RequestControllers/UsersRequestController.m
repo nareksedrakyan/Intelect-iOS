@@ -22,8 +22,8 @@
         NSError* err;
         User *user = [[User alloc] initWithData:response error:&err];
         success(user);
-    } fail:^(NSError *error, NSUInteger statusCode) {
-        fail(error, statusCode);
+    } fail:^(NSError *error, NSString *responseErrorMessage, NSUInteger statusCode) {
+        fail(error,responseErrorMessage,statusCode);
     }];
 }
 
@@ -33,8 +33,8 @@
         NSError* err;
         User *user = [[User alloc] initWithData:response error:&err];
         success(user);
-    } fail:^(NSError *error, NSUInteger statusCode) {
-        fail(error, statusCode);
+    } fail:^(NSError *error, NSString *responseErrorMessage, NSUInteger statusCode) {
+        fail(error,responseErrorMessage,statusCode);
     }];
 }
 

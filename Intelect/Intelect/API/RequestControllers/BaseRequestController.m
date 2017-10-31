@@ -25,43 +25,56 @@
     return absoluteUrl.copy;
 }
 
+- (AFHTTPSessionManager *)manager {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    AFJSONRequestSerializer *serializer = [AFJSONRequestSerializer serializer];
+    [serializer setStringEncoding:NSUTF8StringEncoding];
+    
+    manager.requestSerializer=serializer;
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    return manager;
+}
+
 - (void)getForUri:(NSString *)uri success:(SuccessBlock)success fail:(FailBlock)fail {
     NSString *url = [self absoluteUrlWithUri:uri];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [[self manager] GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        fail(error,((NSHTTPURLResponse *)task.response).statusCode);
+        NSString* responseErrorMessage = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
+
+        fail(error,responseErrorMessage,((NSHTTPURLResponse *)task.response).statusCode);
     }];
 }
 
 - (void)postForUri:(NSString *)uri object:(JSONModel *)object success:(SuccessBlock)success fail:(FailBlock)fail {
     NSString *url = [self absoluteUrlWithUri:uri];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager POST:url parameters:[object toDictionary] progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [[self manager] POST:url parameters:[object toDictionary] progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        fail(error,((NSHTTPURLResponse *)task.response).statusCode);
+        NSString* responseErrorMessage = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
+        fail(error,responseErrorMessage,((NSHTTPURLResponse *)task.response).statusCode);
     }];
 }
 
 - (void)putForUri:(NSString *)uri object:(id)object success:(SuccessBlock)success fail:(FailBlock)fail {
     NSString *url = [self absoluteUrlWithUri:uri];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager PUT:url parameters:[object toDictionary] success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [[self manager] PUT:url parameters:[object toDictionary] success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
          success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-         fail(error,((NSHTTPURLResponse *)task.response).statusCode);
+        NSString* responseErrorMessage = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
+         fail(error,responseErrorMessage,((NSHTTPURLResponse *)task.response).statusCode);
     }];
 }
 
 - (void)deleteForUri:(NSString *)uri byID:(NSString *)ID success:(SuccessBlock)success fail:(FailBlock)fail {
     NSString *url = [self absoluteUrlWithUri:uri];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager DELETE:url parameters:@{@"id": ID} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [[self manager] DELETE:url parameters:@{@"id": ID} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        fail(error,((NSHTTPURLResponse *)task.response).statusCode);
+        NSString* responseErrorMessage = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
+        fail(error,responseErrorMessage,((NSHTTPURLResponse *)task.response).statusCode);
     }];
 }
 
