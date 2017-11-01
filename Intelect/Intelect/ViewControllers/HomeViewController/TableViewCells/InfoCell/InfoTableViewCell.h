@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface InfoTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *positionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *goldLabel;
-
-- (void)setupWithUser:(NSDictionary *)user;
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
 @end

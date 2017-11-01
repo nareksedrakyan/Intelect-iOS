@@ -6,6 +6,7 @@
 //  Copyright © 2017 Narek Sedrakyan. All rights reserved.
 //
 #import "HomeViewController.h"
+#import "SignInViewController.h"
 
 typedef NS_ENUM(NSUInteger, type) {
     Info = 0,
@@ -14,7 +15,7 @@ typedef NS_ENUM(NSUInteger, type) {
     GameHistory,
 };
 
-@interface HomeViewController ()
+@interface HomeViewController () <UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
@@ -25,17 +26,25 @@ typedef NS_ENUM(NSUInteger, type) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self presentLogin];
-    [self setup];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)presentLogin {
     UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNavigation"];
     [self presentViewController:navController animated:YES completion:nil];
+    SignInViewController *sivc = navController.viewControllers.firstObject;
+    @weakify(self)
+    sivc.completion = ^(id user) {
+        @strongify(self)
+        [[Settings sharedInstance] setLoggedInUser:user];
+        [self setup];
+    };
 }
 
 - (void)setup {
     [self registerNibs];
+    self.tableview.delegate = self;
+    self.tableview.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,8 +93,8 @@ typedef NS_ENUM(NSUInteger, type) {
 }
 
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
+}
 
 @end

@@ -69,9 +69,9 @@
 
 - (IBAction)signUpAction:(UIButton *)sender {
     User *user = [[User alloc] init];
-    user.userName = self.userNameTexField.text;
+    user.userName = [self.userNameTexField.text lowercaseString];
     user.displayName = self.displayNameTextField.text;
-    user.email = self.emailTextField.text;
+    user.email = [self.emailTextField.text lowercaseString];
     user.password = self.passwordTextField.text;
     
     Location *location = [[Location alloc] init];

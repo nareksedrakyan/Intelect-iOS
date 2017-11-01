@@ -12,16 +12,17 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    [self setup];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
-- (void)setupWithUser:(NSDictionary *)user {
-    
+- (void)setup {
+    self.nameLabel.text = [Settings sharedInstance].loggedInUser.displayName;
+    self.positionLabel.text = [Settings sharedInstance].loggedInUser.position;
+    self.goldLabel.text = [NSString stringWithFormat:@"Gold %ld ",[Settings sharedInstance].loggedInUser.gold];
 }
+
 @end

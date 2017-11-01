@@ -100,6 +100,7 @@
 		9738EA5A1FA9D64F00828DFE /* NSMethodSignature+EXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMethodSignature+EXT.h"; sourceTree = "<group>"; };
 		9738EA5B1FA9D64F00828DFE /* NSMethodSignature+EXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMethodSignature+EXT.m"; sourceTree = "<group>"; };
 		9738EA651FA9D80500828DFE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9738EA661FAA3EDC00828DFE /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		9739CF161FA8DF8500501F7A /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		9739CF171FA8DF8500501F7A /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		9739CF1A1FA8DFA800501F7A /* Rating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rating.h; sourceTree = "<group>"; };
@@ -281,6 +282,7 @@
 				9792F44A1FA4B4C4009A4FD1 /* Info.plist */,
 				9792F44B1FA4B4C4009A4FD1 /* main.m */,
 				9738EA651FA9D80500828DFE /* PrefixHeader.pch */,
+				9738EA661FAA3EDC00828DFE /* Defines.h */,
 			);
 			path = Intelect;
 			sourceTree = "<group>";

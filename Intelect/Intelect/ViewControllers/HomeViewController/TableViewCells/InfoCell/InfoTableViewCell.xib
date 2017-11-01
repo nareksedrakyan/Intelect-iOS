@@ -20,6 +20,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ldi-9Z-XVL">
                         <rect key="frame" x="10" y="10" width="80" height="80"/>
+                        <color key="backgroundColor" red="1" green="0.34553571428571417" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="KyF-35-9jS"/>
                             <constraint firstAttribute="width" constant="80" id="bpD-ma-prR"/>
@@ -32,32 +33,33 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BX3-St-A0c">
-                        <rect key="frame" x="100" y="31" width="31" height="14.5"/>
+                        <rect key="frame" x="100" y="41" width="31" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzY-tF-c49">
-                        <rect key="frame" x="100" y="45.5" width="31" height="14.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="100" y="65.5" width="33" height="14.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <color key="textColor" red="1" green="0.67887834821428561" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="BX3-St-A0c" firstAttribute="top" secondItem="iN3-4x-F4v" secondAttribute="bottom" constant="10" id="756-Zq-kGe"/>
+                    <constraint firstItem="fzY-tF-c49" firstAttribute="top" secondItem="BX3-St-A0c" secondAttribute="bottom" constant="10" id="AQn-i2-geh"/>
                     <constraint firstItem="BX3-St-A0c" firstAttribute="leading" secondItem="iN3-4x-F4v" secondAttribute="leading" id="H9s-sD-Ij8"/>
                     <constraint firstItem="Ldi-9Z-XVL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="NNJ-Oi-hj0"/>
                     <constraint firstItem="iN3-4x-F4v" firstAttribute="leading" secondItem="Ldi-9Z-XVL" secondAttribute="trailing" constant="10" id="jEb-96-iBN"/>
                     <constraint firstItem="iN3-4x-F4v" firstAttribute="top" secondItem="Ldi-9Z-XVL" secondAttribute="top" id="lKS-yx-PNb"/>
-                    <constraint firstItem="fzY-tF-c49" firstAttribute="top" secondItem="BX3-St-A0c" secondAttribute="bottom" id="lcM-aY-jwS"/>
                     <constraint firstItem="fzY-tF-c49" firstAttribute="leading" secondItem="iN3-4x-F4v" secondAttribute="leading" id="mF8-Ss-yx1"/>
-                    <constraint firstItem="BX3-St-A0c" firstAttribute="top" secondItem="iN3-4x-F4v" secondAttribute="bottom" id="puG-Dx-06z"/>
                     <constraint firstItem="Ldi-9Z-XVL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yBe-7Z-U8Y"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="goldLabel" destination="fzY-tF-c49" id="3Tu-4i-OW7"/>
+                <outlet property="imgView" destination="Ldi-9Z-XVL" id="KEP-fT-5f8"/>
                 <outlet property="nameLabel" destination="iN3-4x-F4v" id="bwt-yv-59y"/>
                 <outlet property="positionLabel" destination="BX3-St-A0c" id="VHn-Fv-ZJf"/>
             </connections>

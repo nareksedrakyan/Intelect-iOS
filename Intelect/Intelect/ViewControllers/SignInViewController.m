@@ -44,11 +44,13 @@
 - (IBAction)signInAction:(UIButton *)sender {
     UsersRequestController *urc = [[UsersRequestController alloc] init];
     User *user = [[User alloc] init];
-    user.userName = self.usernameTextField.text;
+    user.userName = [self.usernameTextField.text lowercaseString];
     user.password = self.passwordTextField.text;
+    @weakify(self)
     [urc signInWithUser:user success:^(id response) {
-        [[Settings sharedInstance] setLoggedInUser:response];
+        @strongify(self)
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        self.completion(response);
     } fail:^(NSError *error, NSString *responseErrorMessage, NSUInteger statusCode) {
         NSLog(@"%@",responseErrorMessage);
     }];
