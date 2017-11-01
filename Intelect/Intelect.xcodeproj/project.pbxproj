@@ -10,6 +10,15 @@
 		0BE33B16E5DBEF114BBB235C /* libPods-Intelect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F52968FF0816D472FBA95751 /* libPods-Intelect.a */; };
 		394F3663447F3698C17F44E7 /* libPods-IntelectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05565B19A4EB1AFDDD93C37B /* libPods-IntelectTests.a */; };
 		953ACFED1D2F108D117F7E23 /* libPods-IntelectUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 071F700200FF126C468A4A8C /* libPods-IntelectUITests.a */; };
+		9738EA5C1FA9D64F00828DFE /* EXTADT.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738EA451FA9D64F00828DFE /* EXTADT.m */; };
+		9738EA5D1FA9D64F00828DFE /* EXTConcreteProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738EA471FA9D64F00828DFE /* EXTConcreteProtocol.m */; };
+		9738EA5E1FA9D64F00828DFE /* EXTNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738EA4B1FA9D64F00828DFE /* EXTNil.m */; };
+		9738EA5F1FA9D64F00828DFE /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738EA4F1FA9D64F00828DFE /* EXTRuntimeExtensions.m */; };
+		9738EA601FA9D64F00828DFE /* EXTSafeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738EA511FA9D64F00828DFE /* EXTSafeCategory.m */; };
+		9738EA611FA9D64F00828DFE /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738EA531FA9D64F00828DFE /* EXTScope.m */; };
+		9738EA621FA9D64F00828DFE /* EXTSelectorChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738EA551FA9D64F00828DFE /* EXTSelectorChecking.m */; };
+		9738EA631FA9D64F00828DFE /* NSInvocation+EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738EA591FA9D64F00828DFE /* NSInvocation+EXT.m */; };
+		9738EA641FA9D64F00828DFE /* NSMethodSignature+EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738EA5B1FA9D64F00828DFE /* NSMethodSignature+EXT.m */; };
 		9739CF181FA8DF8500501F7A /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 9739CF171FA8DF8500501F7A /* Location.m */; };
 		9739CF1C1FA8DFA800501F7A /* Rating.m in Sources */ = {isa = PBXBuildFile; fileRef = 9739CF1B1FA8DFA800501F7A /* Rating.m */; };
 		9792F43E1FA4B4C4009A4FD1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9792F43D1FA4B4C4009A4FD1 /* AppDelegate.m */; };
@@ -66,6 +75,31 @@
 		071F700200FF126C468A4A8C /* libPods-IntelectUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IntelectUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		147556F0329A30DB399F4692 /* Pods-IntelectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IntelectUITests/Pods-IntelectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		46CE5AD1AA57F4979EA3D84E /* Pods-IntelectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IntelectUITests/Pods-IntelectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9738EA441FA9D64F00828DFE /* EXTADT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTADT.h; sourceTree = "<group>"; };
+		9738EA451FA9D64F00828DFE /* EXTADT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTADT.m; sourceTree = "<group>"; };
+		9738EA461FA9D64F00828DFE /* EXTConcreteProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTConcreteProtocol.h; sourceTree = "<group>"; };
+		9738EA471FA9D64F00828DFE /* EXTConcreteProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTConcreteProtocol.m; sourceTree = "<group>"; };
+		9738EA481FA9D64F00828DFE /* EXTCoroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTCoroutine.h; sourceTree = "<group>"; };
+		9738EA491FA9D64F00828DFE /* EXTKeyPathCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTKeyPathCoding.h; sourceTree = "<group>"; };
+		9738EA4A1FA9D64F00828DFE /* EXTNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTNil.h; sourceTree = "<group>"; };
+		9738EA4B1FA9D64F00828DFE /* EXTNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTNil.m; sourceTree = "<group>"; };
+		9738EA4C1FA9D64F00828DFE /* extobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extobjc.h; sourceTree = "<group>"; };
+		9738EA4D1FA9D64F00828DFE /* extobjc_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extobjc_Prefix.pch; sourceTree = "<group>"; };
+		9738EA4E1FA9D64F00828DFE /* EXTRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTRuntimeExtensions.h; sourceTree = "<group>"; };
+		9738EA4F1FA9D64F00828DFE /* EXTRuntimeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTRuntimeExtensions.m; sourceTree = "<group>"; };
+		9738EA501FA9D64F00828DFE /* EXTSafeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTSafeCategory.h; sourceTree = "<group>"; };
+		9738EA511FA9D64F00828DFE /* EXTSafeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTSafeCategory.m; sourceTree = "<group>"; };
+		9738EA521FA9D64F00828DFE /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
+		9738EA531FA9D64F00828DFE /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
+		9738EA541FA9D64F00828DFE /* EXTSelectorChecking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTSelectorChecking.h; sourceTree = "<group>"; };
+		9738EA551FA9D64F00828DFE /* EXTSelectorChecking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTSelectorChecking.m; sourceTree = "<group>"; };
+		9738EA561FA9D64F00828DFE /* EXTSynthesize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTSynthesize.h; sourceTree = "<group>"; };
+		9738EA571FA9D64F00828DFE /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
+		9738EA581FA9D64F00828DFE /* NSInvocation+EXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+EXT.h"; sourceTree = "<group>"; };
+		9738EA591FA9D64F00828DFE /* NSInvocation+EXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+EXT.m"; sourceTree = "<group>"; };
+		9738EA5A1FA9D64F00828DFE /* NSMethodSignature+EXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMethodSignature+EXT.h"; sourceTree = "<group>"; };
+		9738EA5B1FA9D64F00828DFE /* NSMethodSignature+EXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMethodSignature+EXT.m"; sourceTree = "<group>"; };
+		9738EA651FA9D80500828DFE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9739CF161FA8DF8500501F7A /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		9739CF171FA8DF8500501F7A /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		9739CF1A1FA8DFA800501F7A /* Rating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rating.h; sourceTree = "<group>"; };
@@ -161,6 +195,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9738EA431FA9D64F00828DFE /* extobjc */ = {
+			isa = PBXGroup;
+			children = (
+				9738EA441FA9D64F00828DFE /* EXTADT.h */,
+				9738EA451FA9D64F00828DFE /* EXTADT.m */,
+				9738EA461FA9D64F00828DFE /* EXTConcreteProtocol.h */,
+				9738EA471FA9D64F00828DFE /* EXTConcreteProtocol.m */,
+				9738EA481FA9D64F00828DFE /* EXTCoroutine.h */,
+				9738EA491FA9D64F00828DFE /* EXTKeyPathCoding.h */,
+				9738EA4A1FA9D64F00828DFE /* EXTNil.h */,
+				9738EA4B1FA9D64F00828DFE /* EXTNil.m */,
+				9738EA4C1FA9D64F00828DFE /* extobjc.h */,
+				9738EA4D1FA9D64F00828DFE /* extobjc_Prefix.pch */,
+				9738EA4E1FA9D64F00828DFE /* EXTRuntimeExtensions.h */,
+				9738EA4F1FA9D64F00828DFE /* EXTRuntimeExtensions.m */,
+				9738EA501FA9D64F00828DFE /* EXTSafeCategory.h */,
+				9738EA511FA9D64F00828DFE /* EXTSafeCategory.m */,
+				9738EA521FA9D64F00828DFE /* EXTScope.h */,
+				9738EA531FA9D64F00828DFE /* EXTScope.m */,
+				9738EA541FA9D64F00828DFE /* EXTSelectorChecking.h */,
+				9738EA551FA9D64F00828DFE /* EXTSelectorChecking.m */,
+				9738EA561FA9D64F00828DFE /* EXTSynthesize.h */,
+				9738EA571FA9D64F00828DFE /* metamacros.h */,
+				9738EA581FA9D64F00828DFE /* NSInvocation+EXT.h */,
+				9738EA591FA9D64F00828DFE /* NSInvocation+EXT.m */,
+				9738EA5A1FA9D64F00828DFE /* NSMethodSignature+EXT.h */,
+				9738EA5B1FA9D64F00828DFE /* NSMethodSignature+EXT.m */,
+			);
+			path = extobjc;
+			sourceTree = "<group>";
+		};
 		9739CF151FA8DF8500501F7A /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +269,7 @@
 		9792F43B1FA4B4C4009A4FD1 /* Intelect */ = {
 			isa = PBXGroup;
 			children = (
+				9738EA431FA9D64F00828DFE /* extobjc */,
 				97B11EBC1FA79774001199BD /* API */,
 				97FB838A1FA8F83E0083C441 /* ViewControllers */,
 				97FB83C31FA906960083C441 /* Settings */,
@@ -214,6 +280,7 @@
 				9792F4471FA4B4C4009A4FD1 /* LaunchScreen.storyboard */,
 				9792F44A1FA4B4C4009A4FD1 /* Info.plist */,
 				9792F44B1FA4B4C4009A4FD1 /* main.m */,
+				9738EA651FA9D80500828DFE /* PrefixHeader.pch */,
 			);
 			path = Intelect;
 			sourceTree = "<group>";
@@ -698,10 +765,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				97FB83B91FA8F83E0083C441 /* GameHistoryTableViewCell.m in Sources */,
+				9738EA5E1FA9D64F00828DFE /* EXTNil.m in Sources */,
+				9738EA641FA9D64F00828DFE /* NSMethodSignature+EXT.m in Sources */,
 				97B11EC51FA79848001199BD /* User.m in Sources */,
 				97FB83BF1FA8F83E0083C441 /* MarketViewController.m in Sources */,
+				9738EA631FA9D64F00828DFE /* NSInvocation+EXT.m in Sources */,
 				97FB83BE1FA8F83E0083C441 /* MainTabBarController.m in Sources */,
 				97FB83B11FA8F83E0083C441 /* BaseViewController.m in Sources */,
+				9738EA601FA9D64F00828DFE /* EXTSafeCategory.m in Sources */,
 				97FB83C01FA8F83E0083C441 /* NotificationsViewController.m in Sources */,
 				9739CF181FA8DF8500501F7A /* Location.m in Sources */,
 				97FB83C11FA8F83E0083C441 /* SignInViewController.m in Sources */,
@@ -710,12 +781,17 @@
 				9739CF1C1FA8DFA800501F7A /* Rating.m in Sources */,
 				97B11ED81FA7C8C7001199BD /* UsersRequestController.m in Sources */,
 				9792F44C1FA4B4C4009A4FD1 /* main.m in Sources */,
+				9738EA5C1FA9D64F00828DFE /* EXTADT.m in Sources */,
+				9738EA621FA9D64F00828DFE /* EXTSelectorChecking.m in Sources */,
 				9792F43E1FA4B4C4009A4FD1 /* AppDelegate.m in Sources */,
 				97FB83BD1FA8F83E0083C441 /* LeaderBoardViewController.m in Sources */,
+				9738EA611FA9D64F00828DFE /* EXTScope.m in Sources */,
 				97FB83B51FA8F83E0083C441 /* ChallengesTableViewCell.m in Sources */,
 				97FB83B21FA8F83E0083C441 /* BrowseTopicsViewController.m in Sources */,
 				97FB83B71FA8F83E0083C441 /* FollowedTopicsTableViewCell.m in Sources */,
 				97FB83BB1FA8F83E0083C441 /* InfoTableViewCell.m in Sources */,
+				9738EA5D1FA9D64F00828DFE /* EXTConcreteProtocol.m in Sources */,
+				9738EA5F1FA9D64F00828DFE /* EXTRuntimeExtensions.m in Sources */,
 				97B11EC81FA798B7001199BD /* BaseRequestController.m in Sources */,
 				97FB83C61FA906E30083C441 /* Settings.m in Sources */,
 				97FB83C21FA8F83E0083C441 /* SignUpViewController.m in Sources */,
@@ -885,6 +961,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = Intelect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nareksedrakyan.Intelect;
@@ -900,6 +978,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = Intelect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nareksedrakyan.Intelect;

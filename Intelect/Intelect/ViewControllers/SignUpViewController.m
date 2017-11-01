@@ -10,7 +10,6 @@
 #import "UsersRequestController.h"
 #import "User.h"
 #import <CoreLocation/CoreLocation.h>
-
 #define BASE_URL  @"https://intelect-184208.appspot.com/api/"
 
 @interface SignUpViewController () <NSURLSessionDelegate,CLLocationManagerDelegate>
@@ -82,10 +81,9 @@
     user.location = location;
     UsersRequestController *urc = [[UsersRequestController alloc] init];
     @weakify(self)
-    __weak typeof(self) weakSelf = self;
     [urc signUpWithUser:user success:^(id response) {
-        typeof(self) strongSelf = weakSelf;
-        [strongSelf.signUpDelegate signUpViewController:self didreceiveUser:response];
+        @strongify(self)
+        [self.signUpDelegate signUpViewController:self didreceiveUser:response];
         [self.navigationController popViewControllerAnimated:YES];
     } fail:^(NSError *error, NSString *responseErrorMessage, NSUInteger statusCode) {
         NSLog(@"%@",responseErrorMessage);
