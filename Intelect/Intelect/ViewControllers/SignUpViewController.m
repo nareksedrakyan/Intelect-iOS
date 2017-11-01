@@ -9,10 +9,11 @@
 #import "SignUpViewController.h"
 #import "UsersRequestController.h"
 #import "User.h"
+#import <CoreLocation/CoreLocation.h>
 
 #define BASE_URL  @"https://intelect-184208.appspot.com/api/"
 
-@interface SignUpViewController () <NSURLSessionDelegate>
+@interface SignUpViewController () <NSURLSessionDelegate,CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTexField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -20,7 +21,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *displayNameTextField;
 @property (weak, nonatomic) IBOutlet UIStackView *stackView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
+//@property (nonatomic) CLLocationManager *locationManager;
+@property (nonatomic) CLLocation *currentLocation;
 @end
 
 @implementation SignUpViewController
@@ -36,6 +38,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self startUpdatingLocation];
     // Do any additional setup after loading the view.
 }
 
@@ -43,13 +46,42 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)startUpdatingLocation {
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+  
+//    self.locationManager.delegate = self;
+//    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+//    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+//        [self.locationManager requestWhenInUseAuthorization];
+//
+    [locationManager startUpdatingLocation];
+    self.currentLocation = [locationManager location];
+
+}
+
+//- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+//    self.currentLocation = [locations lastObject];
+//    [self.locationManager stopUpdatingLocation];
+//    self.locationManager.delegate = nil;
+//    self.locationManager = nil;
+//}
+
 - (IBAction)signUpAction:(UIButton *)sender {
     User *user = [[User alloc] init];
     user.userName = self.userNameTexField.text;
     user.displayName = self.displayNameTextField.text;
     user.email = self.emailTextField.text;
     user.password = self.passwordTextField.text;
+    
+    Location *location = [[Location alloc] init];
+    location.latitude = self.currentLocation.coordinate.latitude;
+    location.longitude = self.currentLocation.coordinate.longitude;
+
+    user.location = location;
     UsersRequestController *urc = [[UsersRequestController alloc] init];
+    @weakify(self)
     __weak typeof(self) weakSelf = self;
     [urc signUpWithUser:user success:^(id response) {
         typeof(self) strongSelf = weakSelf;

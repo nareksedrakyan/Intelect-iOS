@@ -24,9 +24,14 @@ typedef NS_ENUM(NSUInteger, type) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+    [self presentLogin];
     [self setup];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)presentLogin {
+    UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNavigation"];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 - (void)setup {

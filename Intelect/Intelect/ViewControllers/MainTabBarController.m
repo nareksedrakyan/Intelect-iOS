@@ -14,24 +14,9 @@
 
 @implementation MainTabBarController
 
-
-- (void)loadView {
-    [super loadView];
-   
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.selectedIndex = 2;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [self presentLogin];
-}
-
-- (void)presentLogin {
-    UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginNavigation"];
-    [self presentViewController:navController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
