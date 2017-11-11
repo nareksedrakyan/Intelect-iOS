@@ -1,22 +1,23 @@
 //
-//  User.m
+//  Duel.m
 //  Intelect
 //
-//  Created by Narek Sedrakyan on 10/30/17.
+//  Created by Narek Sedrakyan on 11/12/17.
 //  Copyright © 2017 Narek Sedrakyan. All rights reserved.
 //
 
-#import "User.h"
-#import "Question.h"
+#import "Duel.h"
 
-@implementation User
+@implementation Duel
 
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
     return YES;
 }
+
 + (JSONKeyMapper *)keyMapper {
     return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
                                                                   @"ID": @"id"
                                                                   }];
 }
+
 @end

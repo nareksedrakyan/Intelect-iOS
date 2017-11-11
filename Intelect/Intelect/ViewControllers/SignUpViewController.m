@@ -9,6 +9,7 @@
 #import "SignUpViewController.h"
 #import "UsersRequestController.h"
 #import "User.h"
+#import "Location.h"
 #import <CoreLocation/CoreLocation.h>
 #define BASE_URL  @"https://intelect-184208.appspot.com/api/"
 

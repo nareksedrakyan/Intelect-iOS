@@ -7,9 +7,7 @@
 //
 
 #import <JSONModel/JSONModel.h>
-#import "Topic.h"
-
-@protocol Rating @end
+@class Topic;
 
 @interface Rating : JSONModel
 

@@ -8,10 +8,11 @@
 
 #import "BaseRequestController.h"
 @class User;
+typedef void(^SuccessSignInBlock)(User *user,NSString *accessToken);
 
 @interface UsersRequestController : BaseRequestController
 
 - (void)signUpWithUser:(User *)user success:(SuccessBlock)success fail:(FailBlock)fail;
-- (void)signInWithUser:(User *)user success:(SuccessBlock)success fail:(FailBlock)fail;
+- (void)signInWithUser:(User *)user success:(SuccessSignInBlock)success fail:(FailBlock)fail;
 
 @end

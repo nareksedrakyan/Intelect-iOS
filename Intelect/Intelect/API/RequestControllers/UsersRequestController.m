@@ -27,12 +27,17 @@
     }];
 }
 
-- (void)signInWithUser:(User *)user success:(SuccessBlock)success fail:(FailBlock)fail {
+- (void)signInWithUser:(User *)user success:(SuccessSignInBlock)success fail:(FailBlock)fail {
     NSString *uri = [self absoluteUriFromBaseUri:USERS_BASE_URI uri:SIGNIN_URI];
     [self postForUri:uri object:user success:^(id response) {
         NSError* err;
-        User *user = [[User alloc] initWithData:response error:&err];
-        success(user);
+        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:response
+                                                             options:kNilOptions
+                                                               error:&err];
+        err = nil;
+        User *user = [[User alloc] initWithDictionary:json[@"user"] error:&err];
+        NSString *token = json[@"token"];
+        success(user,token);
     } fail:^(NSError *error, NSString *responseErrorMessage, NSUInteger statusCode) {
         fail(error,responseErrorMessage,statusCode);
     }];

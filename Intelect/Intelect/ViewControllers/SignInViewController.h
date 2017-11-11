@@ -11,6 +11,6 @@
 
 @interface SignInViewController : BaseViewController
 
-@property (nonatomic, copy) void(^completion)(id user);
+@property (nonatomic, copy) void(^completion)(id user, NSString *token);
 
 @end

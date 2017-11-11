@@ -10,7 +10,7 @@
 #import <JSONModel/JSONModel.h>
 
 //#define API_BASE_URL  @"https://intelect-184208.appspot.com/api"
-#define API_BASE_URL  @"http://192.168.0.101:8080/api"
+#define API_BASE_URL  @"http://192.168.0.102:8080/api"
 
 
 @implementation BaseRequestController

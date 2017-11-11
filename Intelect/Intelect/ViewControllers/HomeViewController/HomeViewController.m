@@ -7,6 +7,7 @@
 //
 #import "HomeViewController.h"
 #import "SignInViewController.h"
+#import "InfoTableViewCell.h"
 
 typedef NS_ENUM(NSUInteger, type) {
     Info = 0,
@@ -15,7 +16,7 @@ typedef NS_ENUM(NSUInteger, type) {
     GameHistory,
 };
 
-@interface HomeViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface HomeViewController () <UITableViewDelegate,UITableViewDataSource,InfoTableViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
@@ -34,9 +35,10 @@ typedef NS_ENUM(NSUInteger, type) {
     [self presentViewController:navController animated:YES completion:nil];
     SignInViewController *sivc = navController.viewControllers.firstObject;
     @weakify(self)
-    sivc.completion = ^(id user) {
+    sivc.completion = ^(id user,NSString *token) {
         @strongify(self)
         [[Settings sharedInstance] setLoggedInUser:user];
+        [[Settings sharedInstance] setAccessToken:token];
         [self setup];
     };
 }
@@ -70,6 +72,7 @@ typedef NS_ENUM(NSUInteger, type) {
     switch (indexPath.row) {
         case Info: {
             cell = [tableView dequeueReusableCellWithIdentifier:@"InfoTableViewCell"];
+            [(InfoTableViewCell *)cell setDelegate:self];
         }
             break;
         case Challenges: {
@@ -88,13 +91,24 @@ typedef NS_ENUM(NSUInteger, type) {
         default:
             break;
     }
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return 120;
+}
+
+#pragma mark - InfoTableViewCellDelegate
+
+- (void)infoTableViewCell:(InfoTableViewCell *)cell didSelectImage:(UIImage *)image {
+    
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 }
 
 @end

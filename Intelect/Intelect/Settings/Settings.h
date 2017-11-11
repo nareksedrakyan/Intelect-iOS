@@ -14,5 +14,6 @@
 + (Settings *) sharedInstance;
 
 @property (nonatomic) User *loggedInUser;
+@property (nonatomic) NSString *accessToken;
 
 @end

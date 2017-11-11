@@ -47,10 +47,10 @@
     user.userName = [self.usernameTextField.text lowercaseString];
     user.password = self.passwordTextField.text;
     @weakify(self)
-    [urc signInWithUser:user success:^(id response) {
+    [urc signInWithUser:user success:^(User *user, NSString *token) {
         @strongify(self)
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-        self.completion(response);
+        self.completion(user,token);
     } fail:^(NSError *error, NSString *responseErrorMessage, NSUInteger statusCode) {
         NSLog(@"%@",responseErrorMessage);
     }];

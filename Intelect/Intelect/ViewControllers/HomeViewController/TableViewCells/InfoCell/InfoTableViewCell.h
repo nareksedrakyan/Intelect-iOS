@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class InfoTableViewCell;
+
+@protocol InfoTableViewCellDelegate <NSObject>
+
+- (void)infoTableViewCell:(InfoTableViewCell *)cell didSelectImage:(UIImage *)image;
+
+@end
+
 
 @interface InfoTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *positionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *goldLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+
+@property (weak, nonatomic) id <InfoTableViewCellDelegate> delegate;
 
 @end
