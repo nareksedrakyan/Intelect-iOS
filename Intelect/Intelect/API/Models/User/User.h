@@ -24,6 +24,7 @@
 @property (nonatomic) NSString *password;
 @property (nonatomic) NSString *position;
 @property (nonatomic) NSString *photoUrl;
+@property (nonatomic) NSString *countryPhotoUrl;
 @property (nonatomic) NSString *lastActive;
 @property (nonatomic) NSInteger totalRating;
 @property (nonatomic) NSInteger gold;
